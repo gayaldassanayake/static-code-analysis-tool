@@ -1,5 +1,5 @@
 [tool]
-id = "scan"
+id = "gayal_scan"
 
 [[dependency]]
 path = "../build/libs/scan-command-@toml.version@.jar"

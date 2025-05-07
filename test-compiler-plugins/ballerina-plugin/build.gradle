@@ -136,7 +136,7 @@ spotbugsTest {
 }
 
 // Configurations to automatically build and deploy custom static code analyzer compiler plugin
-def packageOrg = "ballerina"
+def packageOrg = "gayaldassanayake"
 def packageName = "example_module_static_code_analyzer"
 def pluginCentralDirectory = System.getProperty("user.home") + "/.ballerina/repositories/central.ballerina.io/bala/${packageOrg}"
 def pluginLocalDir = System.getProperty("user.home") + "/.ballerina/repositories/local/bala/${packageOrg}"

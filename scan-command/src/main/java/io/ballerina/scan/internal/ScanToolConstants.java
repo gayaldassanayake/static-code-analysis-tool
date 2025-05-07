@@ -18,13 +18,15 @@
 
 package io.ballerina.scan.internal;
 
+import io.ballerina.tools.diagnostics.DiagnosticSeverity;
+
 /**
  * {@code ScanToolConstants} contains the constant variables used within the Ballerina scan tool.
  *
  * @since 0.1.0
  */
 public class ScanToolConstants {
-    static final String SCAN_COMMAND = "scan";
+    static final String SCAN_COMMAND = "gayal_scan";
     static final String BALLERINA_RULE_PREFIX = "ballerina:";
     static final String BALLERINA_ORG = "ballerina";
     static final String BALLERINAI_ORG = "ballerinai";
@@ -41,6 +43,50 @@ public class ScanToolConstants {
 
     public static final String SCANNER_CONTEXT = "ScannerContext";
     public static final String FORWARD_SLASH = "/";
+
+    // Scan build tool options
+    public static final String PLATFORM_TRIGGERED = "platformTriggered";
+    public static final String SCAN_REPORT = "scanReport";
+    public static final String LIST_RULES = "listRules";
+    public static final String INCLUDE_RULES = "includeRules";
+    public static final String EXCLUDE_RULES = "excludeRules";
+    public static final String PLATFORMS = "platforms";
+
+    public enum DiagnosticMessages {
+        ISSUE_CODE_SMELL("SCAN_101", DiagnosticSeverity.WARNING),
+        ISSUE_BUG("SCAN_102", DiagnosticSeverity.WARNING),
+        ISSUE_VULNERABILITY("SCAN_103", DiagnosticSeverity.WARNING),
+
+        OPTION_TYPE_MISMATCH("SCAN_201", "expected and actual option types do not match.", DiagnosticSeverity.ERROR);
+
+        private final String code;
+        private final String description;
+        private final DiagnosticSeverity severity;
+
+        DiagnosticMessages(String code, String description, DiagnosticSeverity severity) {
+            this.code = code;
+            this.description = description;
+            this.severity = severity;
+        }
+
+        DiagnosticMessages(String code, DiagnosticSeverity severity) {
+            this.code = code;
+            this.description = "";
+            this.severity = severity;
+        }
+
+        public String getCode() {
+            return code;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public DiagnosticSeverity getSeverity() {
+            return severity;
+        }
+    }
 
     private ScanToolConstants() {
     }

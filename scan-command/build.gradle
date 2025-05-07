@@ -155,7 +155,7 @@ spotbugsTest {
 }
 
 // Configurations to automatically build and deploy scan tool
-def packageOrg = "ballerina"
+def packageOrg = "gayaldassanayake"
 def packageName = "tool_scan"
 def tomlVersion = "${version}"
 def ballerinaTomlFilePlaceHolder = new File("${rootDir}/build-config/resources/Ballerina.toml")
